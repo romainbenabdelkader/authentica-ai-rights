@@ -1,0 +1,8 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    "https://schema.lockdna.tech/ai-rights/v1"
+  ],
+  "type": "CreativeWork",
+  ...
+}
