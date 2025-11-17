@@ -1,0 +1,11 @@
+authentica-ai-rights/
+│
+├── README.md
+├── manifest/
+│   ├── manifest-v1.jsonld
+│   └── schema.json
+│
+└── examples/
+    ├── example-audio.jsonld
+    ├── example-image.jsonld
+    └── example-text.jsonld
