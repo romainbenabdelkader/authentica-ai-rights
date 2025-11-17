@@ -3,7 +3,7 @@ authentica-ai-rights/
 ├── README.md
 ├── manifest/
 │   ├── manifest-v1.jsonld
-│   └── schema.json
+│   └── schema.json   ← ici
 │
 └── examples/
     ├── example-audio.jsonld
