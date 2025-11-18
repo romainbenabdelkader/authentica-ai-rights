@@ -1,6 +1,6 @@
 # AUTHENTICA  AI Rights Manifest (v1)
 
-The AUTHENTICA AI Rights Manifest defines the first machine-readable
+The AUTHENTICA AI Rights Manifest defines the first machine readable
 standard for protecting human creative works against unauthorized AI
 training, extraction, or replication.
 
