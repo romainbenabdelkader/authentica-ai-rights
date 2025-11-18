@@ -10,6 +10,7 @@ with a verifiable format to express:
 	•	TDM (Text & Data Mining) restrictions
 	•	Mandatory fingerprint / signature
 	•	Verification and auditability
+
 📁 Repository Structure
 authentica-ai-rights/
 │
