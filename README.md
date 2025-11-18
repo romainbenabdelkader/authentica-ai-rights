@@ -13,14 +13,14 @@ that can be embedded into any file (audio, image, text, video).
 
 AUTHENTICA establishes a simple rule:
 
-**Every creative work has the right to declare how AI is allowed—or forbidden—to use it.**
+**Every creative work has the right to declare how AI is allowed or forbidden to use it.**
 
 The manifest allows any work to include:
 
 - its human origin  
 - its unique sovereign identifier (**uid_auth**)  
 - its creator  
-- its AI-usage permissions  
+- its AI usage permissions  
 - its cryptographic signature  
 - its date of proof
 
@@ -59,9 +59,9 @@ The manifest is a JSON-LD document containing the following fields:
 - **origin** — "human", "hybrid", or "ai"  
 - **rights**:  
   - **ai_training** — "prohibited", "allowed", or "restricted"  
-  - **tdm_opt_out** — boolean (EU text-and-data-mining opt-out)
+  - **tdm_opt_out** — boolean (EU text and data mining opt-out)
 - **signature** — SHA-256 or Ed25519 hash  
-- **proofSince** (optional) — date of original creation or deposit  
+- **proofSince** (optional) date of original creation or deposit  
 
 See `manifest/manifest-v1.jsonld` for the authoritative version.
 
@@ -103,4 +103,4 @@ This specification is released under **CC0-1.0**
 
 Author: **Romain Benabdelkader**  
 Website: https://lockdna.tech  
-Project: AUTHENTICA – Sovereign Proof Infrastructure  
+Project: AUTHENTICA Sovereign Proof Infrastructure  
