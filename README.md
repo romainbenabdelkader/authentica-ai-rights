@@ -1,87 +1,59 @@
 # AUTHENTICA  AI Rights Manifest (v1)
+The AUTHENTICA AI Rights Manifest defines the first sovereign, machine readable standard for declaring
+the origin, rights, and AI usage restrictions of creative works.
 
-The AUTHENTICA AI Rights Manifest defines the first machine readable
-standard for protecting human creative works against unauthorized AI
-training, extraction, or replication.
+This specification provides creators, publishers, cultural institutions, and collective management organizations
+with a verifiable format to express:
+	•	Human origin
+	•	Authorship and ownership
+	•	AI-training permissions
+	•	TDM (Text & Data Mining) restrictions
+	•	Mandatory fingerprint / signature
+	•	Verification and auditability
+📁 Repository Structure
+authentica-ai-rights/
+│
+├── README.md
+├── manifest/
+│   ├── manifest-v1.jsonld
+│   └── schema.json
+│
+└── examples/
+    ├── example-audio.jsonld
+    ├── example-image.jsonld
+    └── example-text.jsonld
+🔍 Purpose
+The AUTHENTICA AI Rights Manifest is designed to:
+	•	Protect human-made works from unauthorized AI training
+	•	Provide a standard for legal and cultural institutions
+	•	Enable transparent, verifiable rights metadata
+	•	Establish a sovereign alternative to opaque AI datasets
+	•	Support compliance with the EU AI Act & GDPR
 
-This manifest provides:
-- a universal identifier (uid_auth),
-- a declaration of origin (human-created),
-- explicit rights and restrictions,
-- an interoperable JSON-LD schema,
-- and a verifiable cryptographic signature.
+⸻
 
----
+📡 Machine Readable Rights
 
-## 📘 Schema
+Each manifest contains:
+	•	uid_auth Unique sovereign identifier
+	•	origin “human” or “machine”
+	•	rights.ai_training  “allowed”, “prohibited”, or “restricted”
+	•	tdm_opt_out Legal opt-out flag for dataset mining
+	•	signature SHA-256 signature of the work
 
-The manifest schema is stored in:
+⸻
 
-/manifest/schema.json
+🧪 Examples
 
-It defines the required fields:
-- @context
-- type
-- uid_auth
-- creator
-- origin
-- rights
-- signature
+The /examples folder contains example JSON-LD manifests for:
+	•	Audio
+	•	Image
+	•	Text
+    •	video
 
----
+⸻
 
-## 📦 Manifest Examples
+🛡 Vision
 
-Examples for different types of works are available under:
-
-/examples/
-
-- example-audio.jsonld  
-- example-image.jsonld  
-- example-text.jsonld  
-
-Each file contains:
-- a UID AUTHENTICA
-- AI training permissions
-- text/data mining opt-out (TDM)
-- SHA256 signature of the work
-
----
-
-## 🧭 Purpose
-
-The goal of this repository is to provide an **open, sovereign and
-verifiable** metadata standard allowing:
-
-- authors to mark their works as *human*,
-- institutions to enforce AI-training restrictions,
-- platforms to respect opt-out signals,
-- and regulators to adopt a unified international format.
-
-The manifest is compatible with:
-- EU AI Act  
-- EU Copyright Directive  
-- TDM Opt-Out (Art. 4)  
-- GDPR (no personal data stored)
-
----
-
-## 🔐 Verifiability
-
-AUTHENTICA manifests include:
-
-- SHA-256 signature of the source file
-- a deterministic uid_auth
-- an auditable JSON-LD structure
-
-These guarantees allow institutions, platforms and regulators to verify
-origin and rights without ambiguity.
-
----
-
-## 📄 License
-
-Open format free to implement and integrate.
-
-For questions or institutional use:
-contact: [romain@lockdna.tech]
+AUTHENTICA establishes the foundation for a sovereign, verifiable layer of rights for creative works
+in the age of artificial intelligence ensuring transparency, fairness, and trust.
