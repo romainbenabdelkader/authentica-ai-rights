@@ -4,6 +4,7 @@ the origin, rights, and AI usage restrictions of creative works.
 
 This specification provides creators, publishers, cultural institutions, and collective management organizations
 with a verifiable format to express:
+
 	•	Human origin
 	•	Authorship and ownership
 	•	AI-training permissions
@@ -12,7 +13,9 @@ with a verifiable format to express:
 	•	Verification and auditability
 
 📁 Repository Structure
+
 authentica-ai-rights/
+
 │
 ├── README.md
 ├── manifest/
@@ -23,8 +26,11 @@ authentica-ai-rights/
     ├── example-audio.jsonld
     ├── example-image.jsonld
     └── example-text.jsonld
+
 🔍 Purpose
+
 The AUTHENTICA AI Rights Manifest is designed to:
+
 	•	Protect human-made works from unauthorized AI training
 	•	Provide a standard for legal and cultural institutions
 	•	Enable transparent, verifiable rights metadata
@@ -36,6 +42,7 @@ The AUTHENTICA AI Rights Manifest is designed to:
 📡 Machine Readable Rights
 
 Each manifest contains:
+
 	•	uid_auth Unique sovereign identifier
 	•	origin “human” or “machine”
 	•	rights.ai_training  “allowed”, “prohibited”, or “restricted”
@@ -47,10 +54,11 @@ Each manifest contains:
 🧪 Examples
 
 The /examples folder contains example JSON-LD manifests for:
+
 	•	Audio
 	•	Image
 	•	Text
-    •	video
+  •	video
 
 ⸻
 
