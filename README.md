@@ -81,7 +81,7 @@ origin and rights without ambiguity.
 
 ## 📄 License
 
-Open format — free to implement and integrate.
+Open format free to implement and integrate.
 
 For questions or institutional use:
-contact: [email protected]
+contact: [romain@lockdna.tech]
