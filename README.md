@@ -1,3 +1,6 @@
+![AUTHENTICA AI Rights Manifest](https://img.shields.io/badge/AUTHENTICA%20AI%20Rights-v1-black?style=flat-square)
+
+# AUTHENTICA — AI Rights Manifest (v1)
 # AUTHENTICA  AI Rights Manifest (v1)
 
 The AUTHENTICA AI Rights Manifest defines the first machine-readable
