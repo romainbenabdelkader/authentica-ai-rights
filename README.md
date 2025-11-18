@@ -1,7 +1,7 @@
-# AUTHENTICA — AI Rights Manifest (v1)
+# AUTHENTICA AI Rights Manifest (v1)
 
 The AUTHENTICA AI Rights Manifest defines the first sovereign, machine-readable
-standard for declaring the **origin**, **rights**, and **AI-usage restrictions** of creative works.
+standard for declaring the origin,rights, and AI-usage restrictions of creative works.
 
 This specification provides creators, publishers, cultural institutions, and
 collective management organizations with a verifiable digital manifest
