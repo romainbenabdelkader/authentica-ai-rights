@@ -51,16 +51,16 @@ authentica-ai-rights/
 
 The manifest is a JSON-LD document containing the following fields:
 
-- **@context** — reference to the AUTHENTICA AI Rights schema  
-- **type** — usually "CreativeWork"  
-- **uid_auth** — universal sovereign identifier (e.g. FR-2025-AUTH-000001)  
-- **name** — work title  
-- **creator** — author or rights holder  
-- **origin** — "human", "hybrid", or "ai"  
+- **@context** reference to the AUTHENTICA AI Rights schema  
+- **type** usually "CreativeWork"  
+- **uid_auth** universal sovereign identifier (e.g. FR-2025-AUTH-000001)  
+- **name** work title  
+- **creator** author or rights holder  
+- **origin** "human", "hybrid", or "ai"  
 - **rights**:  
-  - **ai_training** — "prohibited", "allowed", or "restricted"  
-  - **tdm_opt_out** — boolean (EU text and data mining opt-out)
-- **signature** — SHA-256 or Ed25519 hash  
+  - **ai_training** "prohibited", "allowed", or "restricted"  
+  - **tdm_opt_out** boolean (EU text and data mining opt-out)
+- **signature** SHA-256 or Ed25519 hash  
 - **proofSince** (optional) date of original creation or deposit  
 
 See `manifest/manifest-v1.jsonld` for the authoritative version.
