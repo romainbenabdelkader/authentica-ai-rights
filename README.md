@@ -1,68 +1,106 @@
-# AUTHENTICA  AI Rights Manifest (v1)
-The AUTHENTICA AI Rights Manifest defines the first sovereign, machine readable standard for declaring
-the origin, rights, and AI usage restrictions of creative works.
+# AUTHENTICA — AI Rights Manifest (v1)
 
-This specification provides creators, publishers, cultural institutions, and collective management organizations
-with a verifiable format to express:
+The AUTHENTICA AI Rights Manifest defines the first sovereign, machine-readable
+standard for declaring the **origin**, **rights**, and **AI-usage restrictions** of creative works.
 
-	•	Human origin
-	•	Authorship and ownership
-	•	AI-training permissions
-	•	TDM (Text & Data Mining) restrictions
-	•	Mandatory fingerprint / signature
-	•	Verification and auditability
+This specification provides creators, publishers, cultural institutions, and
+collective management organizations with a verifiable digital manifest
+that can be embedded into any file (audio, image, text, video).
 
-📁 Repository Structure
+---
 
+## 🌐 Purpose
+
+AUTHENTICA establishes a simple rule:
+
+**Every creative work has the right to declare how AI is allowed—or forbidden—to use it.**
+
+The manifest allows any work to include:
+
+- its human origin  
+- its unique sovereign identifier (**uid_auth**)  
+- its creator  
+- its AI-usage permissions  
+- its cryptographic signature  
+- its date of proof
+
+This standard is open, extensible, and compatible with the EU AI Act and GDPR.
+
+---
+
+## 🧩 Repository Structure
+
+```
 authentica-ai-rights/
-
 │
 ├── README.md
 ├── manifest/
-│   ├── manifest-v1.jsonld
-│   └── schema.json
+│   ├── manifest-v1.jsonld       # The official v1 manifest format
+│   └── schema.json              # JSON-LD schema for validation
 │
-└── examples/
+└── examples/                    # Examples for different media types
     ├── example-audio.jsonld
     ├── example-image.jsonld
-    └── example-text.jsonld
+    ├── example-text.jsonld
+    └── example-video.jsonld
+```
 
-🔍 Purpose
+---
 
-The AUTHENTICA AI Rights Manifest is designed to:
+## 📜 Manifest Specification (v1)
 
-	•	Protect human-made works from unauthorized AI training
-	•	Provide a standard for legal and cultural institutions
-	•	Enable transparent, verifiable rights metadata
-	•	Establish a sovereign alternative to opaque AI datasets
-	•	Support compliance with the EU AI Act & GDPR
+The manifest is a JSON-LD document containing the following fields:
 
-⸻
+- **@context** — reference to the AUTHENTICA AI Rights schema  
+- **type** — usually "CreativeWork"  
+- **uid_auth** — universal sovereign identifier (e.g. FR-2025-AUTH-000001)  
+- **name** — work title  
+- **creator** — author or rights holder  
+- **origin** — "human", "hybrid", or "ai"  
+- **rights**:  
+  - **ai_training** — "prohibited", "allowed", or "restricted"  
+  - **tdm_opt_out** — boolean (EU text-and-data-mining opt-out)
+- **signature** — SHA-256 or Ed25519 hash  
+- **proofSince** (optional) — date of original creation or deposit  
 
-📡 Machine Readable Rights
+See `manifest/manifest-v1.jsonld` for the authoritative version.
 
-Each manifest contains:
+---
 
-	•	uid_auth Unique sovereign identifier
-	•	origin “human” or “machine”
-	•	rights.ai_training  “allowed”, “prohibited”, or “restricted”
-	•	tdm_opt_out Legal opt-out flag for dataset mining
-	•	signature SHA-256 signature of the work
+## 🧪 Example Files
 
-⸻
+Sample manifests for all media types are available in `/examples`:
 
-🧪 Examples
+- `example-audio.jsonld`
+- `example-image.jsonld`
+- `example-text.jsonld`
+- `example-video.jsonld`
 
-The /examples folder contains example JSON-LD manifests for:
+Each example demonstrates how to declare human origin, rights, and AI restrictions.
 
-	•	Audio
-	•	Image
-	•	Text
-  •	video
+---
 
-⸻
+## 🔐 Sovereign Identifier (uid_auth)
 
-🛡 Vision
+The **uid_auth** follows the AUTHENTICA sovereign format:
 
-AUTHENTICA establishes the foundation for a sovereign, verifiable layer of rights for creative works
-in the age of artificial intelligence ensuring transparency, fairness, and trust.
+```
+FR-2025-AUTH-000001
+```
+
+It can be generated automatically through the AUTHENTICA infrastructure.
+
+---
+
+## ⚖️ Licensing
+
+This specification is released under **CC0-1.0**  
+→ Free to use, adapt, and integrate in any system.
+
+---
+
+## ✉️ Contact
+
+Author: **Romain Benabdelkader**  
+Website: https://lockdna.tech  
+Project: AUTHENTICA – Sovereign Proof Infrastructure  
