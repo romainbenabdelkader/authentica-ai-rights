@@ -1,0 +1,18 @@
+v1.0.0
+
+Release title
+
+AUTHENTICA Protocol – Initial Standard (v1.0.0)
+
+Description
+
+This release marks the first public version of the AUTHENTICA Proof-of-Origin Standard.
+It includes:
+• the LockDNA native fingerprint specification
+• the AUTHENTICA Manifest (JSON-LD)
+• examples for music, image, video and multimodal works
+• compatibility guidelines for CMOs
+• legal and licensing foundations
+
+This version introduces the core principle of AUTHENTICA:
+the fingerprint is extracted from the file, never embedded inside it.
