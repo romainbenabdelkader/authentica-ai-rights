@@ -1,52 +1,54 @@
-AUTHENTICA 
- Universal Proof-of-Origin Protocol
+AUTHENTICA Universal Proof-of-Origin Protocol
 
-AUTHENTICA est une infrastructure souveraine destinée à certifier, tracer et protéger l’origine des œuvres numériques (musique, images, vidéos, textes) sans watermark, sans modification du fichier et sans dépendance aux plateformes.
+AUTHENTICA est une infrastructure souveraine dédiée à la certification et à la protection de l’origine des œuvres numériques (musique, image, vidéo, texte).
+Elle permet à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie, sans watermark et sans dépendance à une plateforme.
 
-L’objectif est simple :
-permettre à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie.
-
-AUTHENTICA n’altère jamais les fichiers.
-L’empreinte est extraite, jamais intégrée.
+AUTHENTICA n’altère jamais les fichiers :
+l’empreinte est extraite, jamais intégrée.
 
 ⸻
 
 1. LockDNA — Empreinte native extraite du fichier
 
-LockDNA est une empreinte multimodale générée directement à partir du contenu d’une œuvre.
-Elle ne modifie rien : aucun watermark, aucune métadonnée imposée, aucun stockage de fichier.
+LockDNA est une empreinte multimodale générée directement à partir du fichier source.
 
-Seule la signature mathématique est conservée, pour servir de preuve d’origine indépendante et inviolable.
+• aucune modification du fichier
+• aucun watermark
+• aucune métadonnée forcée
+• aucun stockage du fichier
+• seule la signature mathématique est conservée
+
+L’œuvre reste intacte.
+La preuve devient inviolable.
 
 ⸻
 
 2. Manifest AUTHENTICA — Déclaration machine-readable
 
-Chaque œuvre peut disposer d’un manifest structuré (JSON-LD) décrivant :
+Chaque œuvre peut être accompagnée d’un manifest JSON-LD contenant :
 
-• origine : humaine ou générée
-• restrictions IA (opt-out, usage limité)
+• origine (humaine / générée)
+• restrictions IA (tdm_opt_out)
 • identifiant souverain UID_AUTH
 • empreinte LockDNA associée
-• informations optionnelles pour sociétés de gestion
+• compatibilité optional avec sociétés de gestion (CMO)
 
-Le manifest n’est jamais injecté dans le fichier :
-il est distribué en sidecar, via API ou ancré sur blockchain.
+Le manifest est distribué en sidecar, ou via API, ou ancré sur blockchain.
+Il n’est jamais intégré dans le fichier.
 
 ⸻
 
-3. Compatibilité avec les sociétés de gestion (CMO)
+3. Compatibilité CMO (SACEM, GEMA, PRS, ASCAP, etc.)
 
-AUTHENTICA respecte le monopole légal des organismes comme SACEM, SCAM, ADAGP, GEMA, PRS, ASCAP, etc.
-
-Lorsqu’une œuvre relève d’un répertoire sous gestion obligatoire, AUTHENTICA fournit :
+AUTHENTICA respecte totalement le rôle légal des sociétés de gestion.
+Elle leur fournit :
 
 • la preuve d’origine
 • la preuve d’intégrité
-• la base pour l’identification
-• un identifiant souverain réutilisable
+• un identifiant souverain compatible
+• un manifest lisible par leurs systèmes
 
-La gestion économique reste entre les mains de la CMO, sans conflit de rôle.
+La gestion économique reste du ressort de la CMO.
 
 ⸻
 
@@ -58,20 +60,20 @@ L’API AUTHENTICA permet :
 • déclarer une œuvre
 • vérifier une œuvre en temps réel
 • récupérer le manifest
-• auditer des œuvres déjà publiées
+• effectuer un audit rétroactif (Spotify, YouTube, TikTok…)
 
-Les fichiers ne transitent jamais : seuls les hashes sécurisés circulent.
+Les fichiers ne sont jamais transmis : uniquement des hashes sécurisés.
 
 ⸻
 
 5. Cas d’usage
 
-• preuve d’origine des œuvres humaines
-• audit retroactif (Spotify, YouTube, TikTok…)
+• preuve d’origine
+• dépôts tardifs (pièces déjà publiées)
 • protection contre l’entraînement IA non autorisé
-• certification pour les dépôts tardifs
-• conformité RGPD & AI Act
-• interopérabilité blockchain (toutes chaînes)
+• traçabilité conforme RGPD & AI Act
+• interopérabilité avec toutes blockchains
+• certification pour plateformes, éditeurs, institutions
 
 ⸻
 
@@ -84,13 +86,13 @@ AUTHENTICA vise à devenir la couche de confiance universelle reliant :
 • plateformes
 • sociétés de gestion
 • institutions culturelles
-• régulateurs européens
+• régulateurs
 
-Une seule vérité : celle de l’origine.
+AUTENTICA : The Layer of Digital Truth.
 
 ⸻
 
 7. Contact
 
 Romain Benabdelkader
-Fondateur AUTHENTICA
+Fondateur
