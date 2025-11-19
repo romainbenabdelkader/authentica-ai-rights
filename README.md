@@ -29,7 +29,7 @@ It also ensures interoperability with:
 
 📦 Manifest Schema (v1)
 
-The manifest is expressed in JSON-LD and includes the following required fields:{
+{
   "@context": [
     "https://schema.authentica.org/manifest-v1.jsonld",
     "https://www.w3.org/ns/activitystreams"
@@ -45,4 +45,4 @@ The manifest is expressed in JSON-LD and includes the following required fields:
   },
   "fingerprint": "sha256-LOCKDNA-HASH",
   "signature": "sha256-SIGNATURE"
-}manifest/schema.json
+}
