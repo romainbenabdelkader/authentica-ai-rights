@@ -1,98 +1,114 @@
-AUTHENTICA Universal Proof-of-Origin Protocol
+AUTHENTICA – Universal Proof-of-Origin Protocol
 
-AUTHENTICA est une infrastructure souveraine dédiée à la certification et à la protection de l’origine des œuvres numériques (musique, image, vidéo, texte).
-Elle permet à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie, sans watermark et sans dépendance à une plateforme.
+AUTHENTICA est une infrastructure souveraine dédiée à la preuve d’origine et à la protection des œuvres numériques (musique, image, vidéo, texte).
+Elle permet à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie — sans watermark, sans altération du fichier et sans dépendance à une plateforme.
 
-AUTHENTICA n’altère jamais les fichiers :
-l’empreinte est extraite, jamais intégrée.
+AUTHENTICA n’intègre jamais l’empreinte dans le fichier :
+l’empreinte est extraite, jamais embarquée.
 
 ⸻
 
 1. LockDNA — Empreinte native extraite du fichier
 
-LockDNA est une empreinte multimodale générée directement à partir du fichier source.
+LockDNA est généré directement depuis les données binaires du fichier source.
 
-• aucune modification du fichier
-• aucun watermark
-• aucune métadonnée forcée
-• aucun stockage du fichier
-• seule la signature mathématique est conservée
+Caractéristiques :
+	•	empreinte unique, inviolable et reproductible
+	•	vérifiable cryptographiquement
+	•	résistante aux transformations (compression, transcodage)
+	•	compatible formats audio, image, vidéo, texte
+	•	indépendante des plateformes
 
-L’œuvre reste intacte.
-La preuve devient inviolable.
-
-⸻
-
-2. Manifest AUTHENTICA — Déclaration machine-readable
-
-Chaque œuvre peut être accompagnée d’un manifest JSON-LD contenant :
-
-• origine (humaine / générée)
-• restrictions IA (tdm_opt_out)
-• identifiant souverain UID_AUTH
-• empreinte LockDNA associée
-• compatibilité optional avec sociétés de gestion (CMO)
-
-Le manifest est distribué en sidecar, ou via API, ou ancré sur blockchain.
-Il n’est jamais intégré dans le fichier.
+Formats supportés : WAV, MP3, FLAC, MP4, MOV, PNG, JPG, PDF, TXT, etc.
 
 ⸻
 
-3. Compatibilité CMO (SACEM, GEMA, PRS, ASCAP, etc.)
+2. UID_AUTH — Identifiant souverain universel
 
-AUTHENTICA respecte totalement le rôle légal des sociétés de gestion.
-Elle leur fournit :
+Chaque œuvre se voit attribuer un identifiant unique :
 
-• la preuve d’origine
-• la preuve d’intégrité
-• un identifiant souverain compatible
-• un manifest lisible par leurs systèmes
+FR-2025-AUTH-000001
 
-La gestion économique reste du ressort de la CMO.
-
-⸻
-
-4. API — Certifier, déclarer, vérifier
-
-L’API AUTHENTICA permet :
-
-• générer une empreinte LockDNA
-• déclarer une œuvre
-• vérifier une œuvre en temps réel
-• récupérer le manifest
-• effectuer un audit rétroactif (Spotify, YouTube, TikTok…)
-
-Les fichiers ne sont jamais transmis : uniquement des hashes sécurisés.
+Cet identifiant :
+	•	identifie l’œuvre de façon pérenne
+	•	peut être vérifié instantanément
+	•	est compatible RGPD, AI Act et exigences probatoires
+	•	peut être utilisé par les sociétés de gestion, éditeurs, plateformes ou institutions
 
 ⸻
 
-5. Cas d’usage
+3. Manifest AI-Rights (JSON-LD)
 
-• preuve d’origine
-• dépôts tardifs (pièces déjà publiées)
-• protection contre l’entraînement IA non autorisé
-• traçabilité conforme RGPD & AI Act
-• interopérabilité avec toutes blockchains
-• certification pour plateformes, éditeurs, institutions
+Chaque œuvre peut être accompagnée d’un manifest décrivant :
+	•	origine : human, hybrid, ai
+	•	restrictions IA : prohibited, allowed, paid-only
+	•	UID_AUTH
+	•	empreinte LockDNA
+	•	signature / preuve cryptographique
 
-⸻
-
-6. Vision
-
-AUTHENTICA vise à devenir la couche de confiance universelle reliant :
-
-• créateurs
-• éditeurs
-• plateformes
-• sociétés de gestion
-• institutions culturelles
-• régulateurs
-
-AUTENTICA : The Layer of Digital Truth.
+Le manifest est séparé du fichier (sidecar, registre, API).
+Le fichier reste entièrement intact.
 
 ⸻
 
-7. Contact
+4. Compatibilité avec les sociétés de gestion collective (CMO / OGC)
 
-Romain Benabdelkader
-Fondateur
+AUTHENTICA est conçu pour fonctionner avec toutes les OGC :
+	•	SACEM
+	•	SCAM
+	•	ADAGP
+	•	GEMA
+	•	PRS
+	•	ASCAP
+	•	etc.
+
+Lorsqu’une œuvre relève d’une gestion collective obligatoire :
+	•	les licences IA doivent passer par la CMO
+	•	un champ cmo_required peut indiquer l’OGC compétente
+	•	un champ cmo_authorization_id peut référencer l’accord
+
+AUTHENTICA ne remplace pas les OGC :
+elle renforce leur souveraineté, leur transparence et leur capacité d’audit.
+
+⸻
+
+5. Contenu du dépôt
+
+Le dépôt comprend :
+	•	le manifest JSON-LD
+	•	le schéma officiel
+	•	des exemples (audio, image, texte, vidéo)
+	•	la documentation technique
+	•	les exemples d’appels API
+	•	les spécifications de LockDNA
+	•	les guides à destination des sociétés de gestion
+	•	les politiques IA
+	•	les fichiers de test et démonstration
+
+⸻
+
+6. Objectif
+
+AUTHENTICA établit une couche universelle de vérité pour les œuvres numériques.
+Elle permet :
+	•	aux créateurs de prouver l’origine humaine de leurs œuvres
+	•	aux éditeurs et sociétés d’auteurs de sécuriser la chaîne de valeur
+	•	aux institutions de disposer d’une preuve neutre, souveraine et vérifiable
+	•	au public de bénéficier d’une transparence totale
+
+⸻
+
+7. Licence
+
+La spécification est publiée sous licence ouverte pour faciliter :
+	•	l’adoption institutionnelle
+	•	les analyses juridiques
+	•	les intégrations techniques
+	•	la normalisation future
+
+⸻
+
+Contact
+
+Romain Ben Abdelkader
+Inventeur & Fondateur — AUTHENTICA
