@@ -1,7 +1,7 @@
 AUTHENTICA – Universal Proof-of-Origin Protocol
 
 AUTHENTICA est une infrastructure souveraine dédiée à la preuve d’origine et à la protection des œuvres numériques (musique, image, vidéo, texte).
-Elle permet à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie — sans watermark, sans altération du fichier et sans dépendance à une plateforme.
+Elle permet à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie sans watermark, sans altération du fichier et sans dépendance à une plateforme.
 
 AUTHENTICA n’intègre jamais l’empreinte dans le fichier :
 l’empreinte est extraite, jamais embarquée.
@@ -60,7 +60,7 @@ AUTHENTICA est conçu pour fonctionner avec toutes les OGC :
 	•	GEMA
 	•	PRS
 	•	ASCAP
-	•	etc.
+	•	etc...
 
 Lorsqu’une œuvre relève d’une gestion collective obligatoire :
 	•	les licences IA doivent passer par la CMO
@@ -110,5 +110,5 @@ La spécification est publiée sous licence ouverte pour faciliter :
 
 Contact
 
-Romain Ben Abdelkader
-Inventeur & Fondateur — AUTHENTICA
+Romain Benabdelkader
+Inventeur & Fondateur  AUTHENTICA
