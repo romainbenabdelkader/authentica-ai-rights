@@ -14,23 +14,21 @@ AUTHENTICA establishes a simple rule:
 
 **Every creative work has the right to declare how AI is allowed or forbidden to use it.**
 
-The manifest allows any work to specify:
+The manifest allows any work to include:
 
 • its human origin  
 • its sovereign identifier (UID_AUTH)  
 • AI-training permissions (`allowed`, `prohibited`, `restricted`)  
 • TDM opt-out flags (EU DSM)  
-• links to CMOs when required (SACEM, GEMA, PRS, ASCAP, etc.)  
-• optional licensing price per million tokens for AI training  
+• licensing price per million tokens (optional)  
 • a LockDNA fingerprint hash  
-• a proof-of-origin timestamp (blockchain anchored)
+• a proof-of-origin timestamp (blockchain anchored)  
+• optional linkage to CMOs (SACEM, GEMA, PRS, ASCAP…)
 
 ---
 
 ## 📌 Manifest Structure (JSON-LD)
-
-All manifests follow this schema:
-{
+---{
 “@context”: [
 “https://www.w3.org/ns/activitystreams”,
 “https://schema.lockdna.tech/ai-rights/v1”
@@ -50,28 +48,26 @@ All manifests follow this schema:
 “fingerprint”: “sha256-LOCKDNA-HASH”,
 “proofSince”: “2025-11-11T00:40:07Z”,
 “signature”: “sha256-SIGNATURE”
----
 
-## 🏛️ Explicit CMO Compatibility (SACEM, GEMA, PRS, ASCAP…)
+## 🏛️ Compatibility with Collective Management Organisations (CMOs)
 
 AUTHENTICA fully respects the legal monopoly of CMOs for mandatory collective management.
 
-When a work is managed by a CMO:
+When a work belongs to a CMO:
 
 - `ai_training_price_per_million_tokens_usd` = **recommended retail price**  
-- The *actual licensing* **must** go through the relevant CMO  
-- `cmo_required` indicates which CMO applies  
-- `cmo_authorization_id` can store a CMO contract reference
+- AI licensing MUST occur through the CMO  
+- `cmo_required` indicates the CMO (ex: `SACEM-FR`)  
+- `cmo_authorization_id` can reference a CMO agreement
 
-Example:
-“rightsAI”: {
+Example:“rightsAI”: {
 “ai_training”: “paid-only”,
 “ai_training_price_per_million_tokens_usd”: 0.025,
 “cmo_required”: “SACEM-FR”,
 “cmo_authorization_id”: “SACEM-IA-2026-004217”
+}
 ---
-
-## 📂 Repository Structure
+## 📂 Project Structure
 authentica-ai-rights/
 │
 ├── README.md
@@ -105,31 +101,27 @@ authentica-ai-rights/
 
 ## 🔒 LockDNA Fingerprint
 
-Every manifest can include a LockDNA fingerprint:
+Each manifest may include a LockDNA fingerprint:
 “fingerprint”: “sha256-LOCKDNA-HASH”
-This hash is generated directly from the source file (audio, image, text, video)  
-and anchored to blockchain for legal evidentiary purposes.
+This hash is computed from the source file (audio, image, text, video)  
+and anchored to blockchain as legal proof of origin.
 
 ---
 
-## 🧪 Examples Included
+## 🧪 Included Examples
 
-Examples are provided for:
+AUTHENTICA provides examples for:
 
-- audio (`example-audio.jsonld`)
-- image
-- text  
-- video  
-- fingerprint sample  
-- declaration API example
+• audio  
+• image  
+• text  
+• video  
+• fingerprint generation  
+• declaration API examples  
 
 ---
 
 ## 🏁 License
 
-This manifest is provided under a permissive open specification license  
-allowing CMOs, governments, and creators to implement AUTHENTICA freely.
-
-Author: **Romain Benabdelkader**  
-Website: https://lockdna.tech  
-Project: AUTHENTICA Sovereign Proof Infrastructure  
+This manifest is published under an open specification license,  
+allowing CMOs, governments, creators, and institutions to adopt AUTHENTICA freely.
