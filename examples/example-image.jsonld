@@ -1,13 +1,26 @@
 {
   "@context": "https://schema.authentica.org/manifest-v1.jsonld",
-  "type": "CreativeWork",
+  "@type": "CreativeWork",
+
   "uid_auth": "FR-2025-AUTH-IMG-000001",
   "name": "Example Image",
   "creator": "Anonymous",
+
   "origin": "human",
+
+  "issued_at": "2025-11-11T00:40:07Z",
+  "issuer": {
+    "name": "AUTHENTICA",
+    "type": "IdentityAuthority"
+  },
+
   "rights": {
     "ai_training": "prohibited",
     "tdm_opt_out": true
   },
-  "signature": "sha256-EXAMPLE-IMAGE"
+
+  "hash": {
+    "algorithm": "sha256",
+    "value": "EXAMPLE-IMAGE"
+  }
 }
