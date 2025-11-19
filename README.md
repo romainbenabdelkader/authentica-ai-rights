@@ -73,31 +73,35 @@ authentica-ai-rights/
 ├── README.md
 │
 ├── manifest/
-│   ├── schema.json
-│   ├── examples/
-│   │   ├── example-audio.jsonld
-│   │   ├── example-image.jsonld
-│   │   ├── example-text.jsonld
-│   │   └── example-video.jsonld
-│   └── docs/
-│       ├── manifest-spec.md
-│       └── cmo-compatibility.md
+│   ├── schema.json
+│   ├── examples/
+│   │   ├── example-audio.jsonld
+│   │   ├── example-image.jsonld
+│   │   ├── example-text.jsonld
+│   │   └── example-video.jsonld
+│   └── docs/
+│       ├── manifest-spec.md
+│       └── cmo-compatibility.md
 │
 ├── lockdna/
-│   ├── spec-lockdna-alpha.md
-│   └── examples/
-│       └── fingerprint_example.json
+│   ├── spec-lockdna-alpha.md
+│   └── examples/
+│       └── fingerprint_example.json
 │
 ├── api/
-│   ├── endpoints.md
-│   └── example-calls/
-│       └── declaration_example.json
+│   ├── endpoints.md
+│   └── example-calls/
+│       └── declaration_example.json
 │
-└── licensing/
-├── cmo-guidelines.md
-├── ai-training-policy.md
-├── publisher-usage.md
----
+├── licensing/
+│   ├── cmo-guidelines.md
+│   ├── ai-training-policy.md
+│   └── publisher-usage.md
+│
+└── legal/
+    ├── open-manifest-license.md
+    ├── disclaimer.md
+    └── governance.md
 
 ## 🔒 LockDNA Fingerprint
 
