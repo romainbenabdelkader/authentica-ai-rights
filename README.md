@@ -29,6 +29,7 @@ It also ensures interoperability with:
 
 📦 Manifest Schema (v1)
 
+The manifest is expressed in JSON-LD and includes the following required fields:
 {
   "@context": [
     "https://schema.authentica.org/manifest-v1.jsonld",
