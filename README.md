@@ -58,11 +58,11 @@ les CMO gardent leur rôle économique et juridique.
 🌐 4. API — Déclaration & vérification
 
 L’API permet :
-    •    génération d’une empreinte LockDNA
-    •    déclaration d’une œuvre
-    •    vérification en temps réel
-    •    récupération du manifest
-    •    audit rétroactif d’œuvres déjà publiées
+génération d’une empreinte LockDNA
+déclaration d’une œuvre
+vérification en temps réel
+récupération du manifest
+audit rétroactif d’œuvres déjà publiées
 
 Les fichiers ne sont jamais stockés.
 Seuls les fingerprint-hash transitent.
@@ -90,6 +90,9 @@ authentica-ai-rights/
     ├── open-manifest-license.md
     ├── disclaimer.md
     └── governance.md
+    
+    ⸻
+    
     🚀 6. Cas d’usage
     •    preuve d’origine pour œuvres humaines
     •    audit rétroactif (Spotify, YouTube, TikTok…)
