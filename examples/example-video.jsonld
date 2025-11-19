@@ -1,13 +1,26 @@
 {
   "@context": "https://schema.authentica.org/ai-rights/v1",
-  "type": "CreativeWork",
+  "@type": "CreativeWork",
+
   "uid_auth": "FR-2025-AUTH-VID-000001",
   "name": "Example Video",
   "creator": "Anonymous",
+
   "origin": "human",
+
+  "issued_at": "2025-11-11T00:40:07Z",
+  "issuer": {
+    "name": "AUTHENTICA",
+    "type": "IdentityAuthority"
+  },
+
   "rights": {
     "ai_training": "prohibited",
     "tdm_opt_out": true
   },
-  "signature": "sha256-EXAMPLE-VIDEO"
+
+  "hash": {
+    "algorithm": "sha256",
+    "value": "EXAMPLE-VIDEO"
+  }
 }
