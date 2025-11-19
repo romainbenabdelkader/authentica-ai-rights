@@ -1,115 +1,115 @@
-AUTHENTICA AI Rights Manifest (v1)
+📘 AUTHENTICA — Universal Proof-of-Origin Protocol
 
-Le standard AUTHENTICA AI Rights Manifest définit la première norme souveraine permettant d’indiquer l’origine d’une œuvre, ses droits, et les restrictions applicables à l’usage de l’intelligence artificielle.
-Cette spécification offre aux créateurs, éditeurs, institutions culturelles et sociétés de gestion collective un moyen fiable, interopérable et lisible par machine pour attester l’origine humaine d’un contenu et encadrer son utilisation par les systèmes d’IA.
+AUTHENTICA est une infrastructure souveraine destinée à certifier, tracer et protéger l’origine des œuvres numériques (musique, image, vidéo, texte) sans watermark, sans base centrale et sans dépendance aux plateformes.
 
-⸻
+L’objectif :
+permettre à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie, grâce à une empreinte native (LockDNA) extraite directement depuis le fichier source.
 
-1. Vision
-
-AUTHENTICA repose sur une idée simple :
-chaque œuvre a le droit d’exister avec sa vérité d’origine et ses propres règles d’usage.
-
-Dans un contexte où les modèles génératifs réutilisent massivement des contenus sans vérification ni transparence, AUTHENTICA fournit un socle de confiance neutre, souverain et universel, permettant d’identifier, protéger et authentifier tout type de création.
+AUTHENTICA ne modifie jamais les fichiers.
+L’empreinte est extraite, pas intégrée.
 
 ⸻
 
-2. Ce que permet le Manifest
+🔒 1. LockDNA — Empreinte native
 
-Le manifest AUTHENTICA permet d’associer à toute œuvre créative :
-    •    son origine (humaine, hybride, IA),
-    •    un identifiant souverain UID_AUTH,
-    •    des règles explicites d’usage par l’IA (autorisé, restreint, interdit),
-    •    un statut tdm_opt_out / opt_in,
-    •    une empreinte LockDNA pour l’intégrité et la provenance,
-    •    une signature garantissant l’authenticité du manifest,
-    •    une compatibilité totale avec le RGPD, l’AI Act, et les standards internationaux du web.
+LockDNA est l’empreinte multimodale générée directement à partir du contenu :
+    •    aucune modification du fichier
+    •    aucune métadonnée forcée
+    •    aucune altération perceptible
+    •    aucun watermark
+    •    aucun stockage du fichier
 
-Ce manifest peut être embarqué dans tout fichier : audio, image, texte ou vidéo.
+LockDNA est dérivé de caractéristiques audio/visuelles/structurelles robustes, puis condensé en une signature stable utilisée comme preuve d’origine.
 
-⸻
-
-3. Origine et intégrité
-
-AUTHENTICA introduit :
-    •    un identifiant souverain unique (UID_AUTH),
-    •    une empreinte LockDNA dérivée du fichier source,
-garantissant la cohérence entre l’œuvre et ses métadonnées.
-
-Cette approche rend possible :
-    •    la preuve d’antériorité,
-    •    la lutte contre les copies ou dérivations non autorisées,
-    •    la sécurisation des œuvres face aux systèmes d’IA susceptibles de les absorber.
+L’œuvre reste intacte.
+La preuve devient inviolable.
 
 ⸻
 
-4. Compatibilité avec les sociétés de gestion collective
+🧬 2. AUTHENTICA Manifest — Déclaration machine-readable
 
-Le systeme AUTHENTICA reconnaît pleinement le rôle des organismes de gestion collective (SACEM, ADAMI, SCPP, GEMA, PRS, ASCAP…).
-Lorsqu’une œuvre relève d’une gestion obligatoire :
-    •    AUTHENTICA s’ajuste au cadre juridique existant ;
-    •    l’identification reste souveraine ;
-    •    les règles d’usage de l’IA renvoient au périmètre de l’organisme compétent ;
-    •    le manifest peut intégrer une référence contractuelle de l’OGC.
+Chaque œuvre peut être accompagnée d’un manifest JSON-LD déclarant :
+    •    origin: human
+    •    restrictions IA (tdm_opt_out)
+    •    empreinte LockDNA associée
+    •    identifiant souverain UID_AUTH
+    •    informations optionnelles pour les sociétés de gestion (CMO)
 
-L’objectif : permettre une transparence totale pour les auteurs, tout en respectant les structures institutionnelles.
-
-⸻
-
-5. Gouvernance ouverte
-
-AUTHENTICA adopte un modèle public, documenté et interopérable afin de garantir :
-    •    absence de dépendance à un fournisseur,
-    •    transparence méthodologique,
-    •    adéquation avec les régulateurs,
-    •    possibilité d’adoption internationale.
-
-Des documents complémentaires détaillent :
-    •    les spécifications LockDNA,
-    •    les lignes directrices pour l’IA,
-    •    les usages pour les éditeurs et institutions,
-    •    le cadre légal et la gouvernance.
+Le manifest n’est pas intégré dans le fichier :
+il est distribué en sidecar, API, ou répliqué via blockchain.
 
 ⸻
 
-6. Conformité et standards
+🏛️ 3. Compatibilité avec les sociétés de gestion (CMO)
 
-AUTHENTICA est alignée avec :
-    •    l’AI Act (obligation de transparence et d’identification des données humaines),
-    •    le RGPD (protection des données personnelles),
-    •    les principes de l’UNESCO sur l’éthique de l’IA,
-    •    les recommandations du W3C sur les métadonnées lisibles par machine.
+AUTHENTICA respecte intégralement le monopole légal des sociétés de gestion collective :
+SACEM, SCAM, ADAGP, SCPP, GEMA, PRS, ASCAP…
 
-Cette conformité garantit une adoption possible par les éditeurs, distributeurs, plateformes et régulateurs.
+Lorsqu’une œuvre relève d’un répertoire sous gestion obligatoire :
+    •    le prix IA indiqué est un prix public conseillé
+    •    la délivrance des licences se fait via la CMO
+    •    le manifest peut contenir un cmo_authorization_id
 
-⸻
-
-7. Feuille de route
-
-Les prochaines évolutions incluent :
-    •    stabilisation du schéma v1,
-    •    extension multimodale (audio, image, vidéo, texte),
-    •    intégration renforcée LockDNA,
-    •    index européen UID_AUTH,
-    •    collaboration avec les OGC européennes,
-    •    proposition de standardisation W3C / CEN.
+AUTHENTICA garantit la preuve d’origine ;
+les CMO gardent leur rôle économique et juridique.
 
 ⸻
 
-8. Mission
+🌐 4. API — Déclaration & vérification
 
-AUTHENTICA ambitionne de devenir la couche mondiale de confiance permettant à chaque œuvre créative de prouver :
-    •    ce qu’elle est,
-    •    d’où elle vient,
-    •    comment elle peut être utilisée.
+L’API permet :
+    •    génération d’une empreinte LockDNA
+    •    déclaration d’une œuvre
+    •    vérification en temps réel
+    •    récupération du manifest
+    •    audit rétroactif d’œuvres déjà publiées
 
-Dans un monde saturé par l’IA, AUTHENTICA restaure la vérité et la dignité de la création humaine.
+Les fichiers ne sont jamais stockés.
+Seuls les fingerprint-hash transitent.
+authentica-ai-rights/
+│
+├── manifest/
+│   ├── schema.json
+│   ├── examples/
+│   └── docs/
+│
+├── lockdna/
+│   ├── spec-lockdna-alpha.md
+│   └── examples/
+│
+├── api/
+│   ├── endpoints.md
+│   └── example-calls/
+│
+├── licensing/
+│   ├── cmo-guidelines.md
+│   ├── ai-training-policy.md
+│   └── publisher-usage.md
+│
+└── legal/
+    ├── open-manifest-license.md
+    ├── disclaimer.md
+    └── governance.md
+    🚀 6. Cas d’usage
+    •    preuve d’origine pour œuvres humaines
+    •    audit rétroactif (Spotify, YouTube, TikTok…)
+    •    protection contre l’entraînement IA non autorisé
+    •    certification de fichiers diffusés hors plateforme
+    •    interopérabilité blockchain (Ethereum, Tezos, Hedera…)
+    •    conformité RGPD & AI Act
 
 ⸻
 
-Conclusion
+🇪🇺 7. Positionnement
 
-AUTHENTICA n’est pas qu’un outil technique.
-C’est une infrastructure de vérité, une réponse souveraine à l’effacement progressif des œuvres humaines, et un cadre universel pour protéger l’origine, les droits et la valeur de la création.
+AUTHENTICA est une infrastructure de confiance européenne, destinée à devenir :
+    •    le standard preuve-d’origine
+    •    la brique souveraine reliant plateformes, institutions, CMO et créateurs
+    •    la couche technique manquante entre création et droit
 
-AUTHENTICA — The Layer of Digital Truth.
+⸻
+
+✉️ Contact
+
+Romain Benabdelkader
+Fondateur AUTHENTICA
