@@ -1,4 +1,5 @@
-AUTHENTICA – Universal Proof-of-Origin Protocol
+AUTHENTICA 
+Universal Proof-of-Origin Protocol
 
 AUTHENTICA est une infrastructure souveraine dédiée à la preuve d’origine et à la protection des œuvres numériques (musique, image, vidéo, texte).
 Elle permet à chaque œuvre de prouver seule son origine humaine, son intégrité et sa chronologie, sans watermark, sans dépendance à une plateforme et en totale conformité RGPD et AI Act.
