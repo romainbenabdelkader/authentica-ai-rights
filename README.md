@@ -180,10 +180,12 @@ AUTHENTICA = infrastructure technique souveraine, pas un concurrent
 
 
 5. Exemples de manifeste (JSON-LD)
+6. 
+Œuvre audio
 
-→ Œuvre audio
+```json
 {
-  "@context": "https://schema.authentica.org/ai-rights/v1",
+  "@context→": "https://schema.authentica.org/ai-rights/v1",
   "@type": "CreativeWork",
 
   "uid_auth": "FR-2025-AUTH-MUS-000001",
@@ -207,6 +209,8 @@ AUTHENTICA = infrastructure technique souveraine, pas un concurrent
     "type": "IdentityAuthority"
   }
 }
+
+
 6. Gouvernance et interopérabilité
 
 AUTHENTICA définit :
