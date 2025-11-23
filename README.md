@@ -1,191 +1,253 @@
-AUTHENTICA
+AUTHENTICA  AI Rights & Origin Manifest
 
-European Proof-of-Origin Protocol for Creative Works
+Standard ouvert de transparence IA, preuve d’origine et conformité européenne (AI Act)
 
-Version publique documentation non confidentielle
 
-1. Mission
+AUTHENTICA définit un cadre souverain et interopérable permettant :
 
-Dans un monde où l’IA génère, transforme et diffuse plus vite que le droit, une question devient essentielle :
+•	la preuve d’origine d’une œuvre (création humaine)
 
-Comment prouver de manière souveraine, vérifiable et universelle qu’une œuvre est réellement d’origine humaine et antérieure à toute copie ?
+•	la transparence IA imposée par le AI Act
 
-AUTHENTICA apporte une réponse européenne :
+•	le TDM opt-out (directive européenne)
 
-•	une preuve d’origine souveraine
-	
-•	un identifiant vérifiable (UID_AUTH)
-	
-•	un manifeste AI Act en JSON-LD
-	
-•	une empreinte native extraite du fichier source (LockDNA – en phase de spécification R&D)
-	
+•	un identifiant universel UID_AUTH
 
-AUTHENTICA vise à devenir la couche de vérité des œuvres créatives européennes.
+•	un manifeste machine readable, compatible DSP, IA et OGC
 
+•	une architecture ouverte, sans dépendance à une plateforme.
 
-2. Positionnement institutionnel
+Ce dépôt contient les éléments publics du standard.
 
-AUTHENTICA est conçu pour être interopérable avec l’ensemble des écosystèmes européens du droit d’auteur.
+Les composants sensibles (registre sécurisé, génération UID_AUTH, signature cryptographique, LockDNA, anti-contournement) sont accessibles uniquement sous NDA.
 
-Compatibilité par conception avec :
 
-•	France : SACEM, SACD, SCAM, ADAMI, SPEDIDAM, SCPP, SPPF 
+1. Objectif du standard
 
-•	Nordics : STIM, Teosto, KODA
+Le AI Act impose :
 
-•	Royaume-Uni : PRS for Music
+1.	la traçabilité des contenus
 
-•	Allemagne : GEMA
+2.	l’indication de l’origine humaine/IA
 
-•	Italie : SIAE
+3.	des signaux lisibles par les systèmes IA
 
-•	Belgique : SABAM
+4.	le respect du TDM opt-out
 
-Ainsi qu’avec les standards :
+AUTHENTICA fournit exactement cette couche manquante entre :
 
-•	DDEX, ISRC, ISWC, EIDR
+• les auteurs
 
-•	et les exigences du AI Act 2026 et du TDM opt-out.
+• les sociétés de gestion collective (OGC)
 
+• les plateformes (DSP)
 
-Plusieurs échanges exploratoires en Europe ont confirmé la nécessité d’une infrastructure de certification partagée, en amont des dépôts et des collections.
+• les IA génératives
 
-(Aucune collaboration formelle n’est déclarée.)
+• le cadre réglementaire européen.
 
 
-3. Architecture (version publique)
+2. Architecture du protocole
 
-3.1. UID_AUTH
+Le protocole AUTHENTICA repose sur trois briques :
 
-Identifiant souverain, horodaté, vérifiable, utilisable hors plateforme.
+1) UID_AUTH (identifiant souverain) déjà opérationnel
 
-Spécification publique disponible :
-https://github.com/romainbenabdelkader/uid-auth
+Format lisible, horodaté, stable, permettant :
 
-3.2. Manifeste AI-Rights (JSON-LD)
+•	la référence d’une œuvre,
 
-Compatible AI Act et conforme RGPD (zéro donnée personnelle).
+•	la déclaration humaine/IA,
 
-Champs disponibles :
+•	la compatibilité juridique inter-pays
 
-•	origin: human
-	
-•	tdm_opt_out: true
-	
-•	politique d’entraînement IA
-	
-•	compatibilité CMO (cmo_required, cmo_authorization_id)
+•	l’interopérabilité avec les OGC
 
 
-3.3. Empreinte native (LockDNA)
+Exemple :
 
-Module d’empreinte multimodale (audio, image, vidéo, texte)
-conçu pour être :
+FR-2025-AUTH-MUS-000001
 
-•	extrait directement du fichier source
-	
-•	robuste aux compressions
-	
-•	indépendant des plateformes
-	
-•	vérifiable hors ligne
-	
-•	conforme RGPD.
+L’UID_AUTH est émis par une autorité identitaire (OGC ou opérateur délégué dans un pilote)
 
-Actuellement en phase de spécification et de R&D.
-Le MVP utilise une simulation contrôlée en attendant l’intégration native.
 
 
-4. MVP actuel : LockTrace Genesis
+2) Manifeste IA (JSON-LD) déjà opérationnel
 
-Le MVP démontre :
+Inclut :
 
-•	certification immédiate
+•	origine humaine
 
-•	hash sécurisé + horodatage
+•	TDM opt-out
 
-•	génération des données nécessaires au manifeste AI Act (export automatisé prévu)
+•	restrictions d’usage IA
 
-•	journalisation & dashboard
+•	hash d’intégrité
 
-•	API simple d’intégration
+•	UID_AUTH
 
-•	support UID_AUTH (protocole spécifié intégration MVP en préparation)
+•	timestamp
 
-•	simulation contrôlée de l’empreinte native (pré-LockDNA)
+•	issuer
 
-Objectif du MVP :
-démontrer toute la chaîne de certification avant l’intégration de l’empreinte native LockDNA et du manifeste IA automatisé.
+•	conformité RGPD (aucune donnée personnelle)
 
+Le manifeste est lisible par les IA, DSP, régulateurs et outils juridiques.
 
-5. Intégration avec les OGC (CMO Mode)
 
-AUTHENTICA respecte pleinement les prérogatives légales des sociétés de gestion collective.
+3) Empreinte native LockDNA spécifiée, R&D en cours
 
-Lorsqu’une œuvre relève d’une OGC, AUTHENTICA devient :
+Le protocole AUTHENTICA prévoit une empreinte extraite du contenu réel (audio, image, vidéo, texte), permettant :
 
-•	une preuve d’origine souveraine
+•	robustesse aux compressions,découpage, transcodages
 
-•	un complément du dépôt
+•	invariance dans le temps
 
-•	un outil de transparence IA
+•	indépendance du format
 
-•	un support technique au TDM opt-out
+•	détection autonome dans les usages illicites IA
 
-•	un mécanisme probant en cas de litige
+LockDNA est un module propriétaire en développement, soumis à R&D DSP/audio & vision.
 
+Il n’est pas inclus dans le présent dépôt.
 
-AUTHENTICA n’altère aucune mission des OGC.
-Il renforce leur capacité à défendre les œuvres européennes dans un paysage numérique dominé par l’IA.
 
+3. Propriétés principales
 
-6. Vision européenne
+•	Standard ouvert : interopérable, neutre, sans dépendance propriétaire
 
-AUTHENTICA n’est ni une application, ni une plateforme.
-C’est une infrastructure de vérité, comparable à :
+•	Preuve d’origine souveraine : UID_AUTH + hash + manifeste IA
 
-•	SSL/TLS (sécurité Web)
-	
-•	robots.txt (interactions automatiques)
+•	Compatible AI Act : transparence, provenance, déclaration, TDM opt-out
 
-•	ISRC / ISWC (identification des œuvres)
+•	RGPD compliant : aucune donnée personnelle dans le manifeste
 
-•	DDEX (interopérabilité éditoriale)
+•	Multimédia : spécifié pour audio, vidéo, image, texte
 
-L’objectif :
-une preuve d’origine universelle, souveraine, interopérable, et vérifiable en Europe comme dans le reste du monde.
+•	Machine-readable : JSON-LD, basé sur schema.org et vocabulaires droits
 
+•	Non intrusif : ne modifie pas le fichier original.
 
-7. Structure du dépôt
 
-authentica-ai-rights/
-│
-├── README.md
-├── manifest/
-│   ├── schema.json
-│   └── examples/
-│       ├── music.json
-│       ├── image.json
-│       └── video.json
-│
-├── uid_auth/
-│   └── spec-uidauth-v1.md
-│
-└── legal/
-    ├── disclaimer.md
-    └── open-manifest-license.md
+4. Intégration avec les sociétés de gestion collective (OGC)
 
+AUTHENTICA est conçu pour être utilisé par :
 
+• SACEM
 
-	
+• ADAMI
 
-8.  Contact
-   
-   
-Romain Benabdelkader
+• SPEDIDAM
 
-Fondateur AUTHENTICA
-France
+• PRS
 
-romain@lockdna.tech
+• STIM
+
+• GEMA
+
+• SIAE
+
+• SABAM, etc….
+
+Le protocole ne remplace pas les OGC
+
+Il fournit la couche technique qui leur manque :
+
+•	preuve d’origine
+
+•	transparence IA
+
+•	UID unifié
+
+•	compatibilité réglementaire
+
+•	registres vérifiables
+
+•	traçabilité des usages IA
+
+L’OGC reste en charge de :
+
+•	la gestion des droits
+
+•	les répartitions
+
+•	les flux financiers
+
+•	les règles internes
+
+
+AUTHENTICA = infrastructure technique souveraine, pas un concurrent
+
+
+5. Exemples de manifeste (JSON-LD)
+
+→ Œuvre audio
+{
+  "@context": "https://schema.authentica.org/ai-rights/v1",
+  "@type": "CreativeWork",
+
+  "uid_auth": "FR-2025-AUTH-MUS-000001",
+  "name": "Example Audio Work",
+  "creator": "Anonymous",
+  "origin": "human",
+
+  "rights": {
+    "ai_training": "prohibited",
+    "tdm_opt_out": true
+  },
+
+  "hash": {
+    "algorithm": "sha256",
+    "value": "EXAMPLE-AUDIO-HASH"
+  },
+
+  "issued_at": "2025-11-11T00:40:07Z",
+  "issuer": {
+    "name": "AUTHENTICA",
+    "type": "IdentityAuthority"
+  }
+}
+6. Gouvernance et interopérabilité
+
+AUTHENTICA définit :
+
+•	un namespace par OGC / autorité
+
+•	un format stable de manifeste
+
+•	un schéma d’émission UID_AUTH
+
+•	les propriétés minimales exigées par le AI Act
+
+
+Interoperable avec :
+
+• son propres vocabulaires
+
+• schema.org CreativeWork
+
+• ODRL (Open Digital Rights Language)
+
+• JSON Schema
+
+
+7. Statut du projet (2025)
+
+•	UID_AUTH : opérationnel, ouvert
+
+•	Manifeste IA Act : opérationnel, stable
+
+•	MVP LockTrace Genesis : disponible en démonstration
+
+•	Pilote institutionnel : en cours de cadrage
+
+•	LockDNA (empreinte native) : spécification complète, implémentation en R&D
+
+Les composants internes (registre, signature, anti-contournement) sont fournis exclusivement sous NDA
+
+
+8. Licence
+
+Ce dépôt concerne uniquement la spécification du standard
+
+L’implémentation complète d’AUTHENTICA ne fait pas partie du code ouvert
