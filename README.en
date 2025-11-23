@@ -1,0 +1,250 @@
+AUTHENTICA  AI Rights & Origin Manifest
+
+Open standard for AI transparency, provenance and European regulatory compliance (AI Act).
+
+AUTHENTICA defines a sovereign, interoperable framework enabling:
+
+•	proof of origin for creative works (human creation)
+
+•	AI transparency as required by the EU AI Act
+
+•	TDM opt-out (EU Copyright Directive)
+
+•	a universal identifier (UID_AUTH)
+
+•	a machine-readable AI Rights Manifest (JSON-LD)
+
+•	interoperability across DSPs, AI systems, registries and collective management organisations (CMOs)
+
+This repository contains the public, open-standard components of AUTHENTICA
+
+Sensitive components (secure registry, UID generation, cryptographic signature, LockDNA, anti-bypass mechanisms) are provided only under NDA
+
+
+1. Purpose of the standard
+
+The EU AI Act requires:
+
+1.	transparency for AI-exposed content
+
+2.	declaration of human / AI origin 
+
+3.	machine-readable usage conditions for AI systems
+
+4.	strict respect of TDM opt-out signals.
+
+AUTHENTICA provides the missing technical layer between:
+
+•	creators
+
+•	collective management organisations (CMOs)
+
+•	digital service providers (DSPs)
+
+•	generative AI systems
+
+•	regulators and public institutions
+
+
+2. Protocol Architecture
+
+AUTHENTICA relies on three main components:
+
+1) UID_AUTH (sovereign identifier)  already operational
+
+A readable, timestamped, stable identifier enabling:
+
+	•	content referencing
+
+	•	human/AI declaration
+
+	•	cross-country legal interoperability
+
+	•	CMO-compatible workflows
+
+Example:
+FR-2025-AUTH-MUS-000001
+
+UID_AUTH is issued by an identity authority (CMO or delegated operator within a pilot)
+
+
+2) AI Rights Manifest (JSON-LD) — already operational
+
+It includes:
+	•	human origin declaration
+
+	•	TDM opt-out
+
+	•	AI usage restrictions
+
+	•	integrity hash
+
+	•	UID_AUTH
+
+	•	timestamp
+
+	•	issuer identity
+
+	•	GDPR-compliant structure (no personal data)
+
+The manifest is machine-readable by AI systems, DSPs, regulators and rights management tools
+
+
+
+3) LockDNA native fingerprint  specified, R&D ongoing
+
+The AUTHENTICA protocol defines a native content fingerprint extracted directly from the work (audio, image, video, text), enabling:
+
+	•	robustness to compression / transcoding
+
+	•	resistance to cropping, remixing or alterations
+
+	•	format-independence
+
+	•	autonomous detection in suspicious AI uses
+
+LockDNA is a proprietary module currently under DSP/AI research & development.
+It is not included in this public repository
+
+
+3. Key Properties
+
+	•	Open standard: neutral, interoperable, vendor-independent
+
+	•	Sovereign proof of origin: UID_AUTH + integrity hash + AI Rights Manifest
+
+	•	AI Act-compatible: transparency, origin, usage restrictions, TDM opt-out
+
+	•	GDPR-compliant: no personal data in the manifest
+
+	•	Multimedia: specified for audio, video, image and text
+
+	•	Machine-readable: JSON-LD, schema.org-aligned
+
+	•	Non-intrusive: does not modify the original file
+
+
+
+4. Integration with Collective Management Organisations (CMOs)
+
+AUTHENTICA is designed to be adopted by:
+
+	•	SACEM
+
+	•	ADAMI
+
+	•	SPEDIDAM
+
+	•	PRS
+
+	•	STIM
+
+	•	GEMA
+
+	•	SIAE
+
+	•	SABAM
+
+	•	and all European CMOs
+
+AUTHENTICA does not replace CMOs
+
+It provides the missing sovereign technical layer for:
+
+	•	origin verification
+
+	•	AI transparency
+
+	•	unified identifier structure
+
+	•	regulatory compliance
+
+	•	verifiable registries
+
+	•	AI-related usage tracking
+
+CMOs remain fully responsible for:
+
+•	rights management
+
+•	distributions
+
+•	financial flows
+
+•	governance
+
+AUTHENTICA = technical sovereignty layer, not a competitor
+
+
+5. JSON-LD Examples
+
+Audio Work Manifest (JSON-LD)
+
+{
+  "@context": "https://schema.authentica.org/ai-rights/v1",
+  "@type": "CreativeWork",
+
+  "uid_auth": "FR-2025-AUTH-MUS-000001",
+  "name": "Example Audio Work",
+  "creator": "Anonymous",
+  "origin": "human",
+
+  "rights": {
+    "ai_training": "prohibited",
+    "tdm_opt_out": true
+  },
+
+  "hash": {
+    "algorithm": "sha256",
+    "value": "EXAMPLE-AUDIO-HASH"
+  },
+
+  "issued_at": "2025-11-11T00:40:07Z",
+  "issuer": {
+    "name": "AUTHENTICA",
+    "type": "IdentityAuthority"
+  }
+}
+
+6. Governance & Interoperability
+
+AUTHENTICA defines:
+
+•	namespaces per issuing authority
+
+•	a stable manifest format
+	
+•	UID_AUTH issuance rules
+
+•	minimum AI Act compliance requirements
+
+The protocol is interoperable with:
+
+•	schema.org CreativeWork
+
+•	ODRL (Open Digital Rights Language)
+
+•	JSON Schema
+
+•	existing CMO and DSP metadata pipelines
+
+
+7. Project Status (2025)
+
+•	UID_AUTH: fully operational, public
+
+•	AI Rights Manifest: stable and deployed
+
+•	MVP (LockTrace Genesis): available for demonstration
+
+•	Institutional pilot: currently under preparation
+
+•	LockDNA native fingerprint: specification complete, implementation under R&D
+
+Sensitive backend components (secure registry, signature, anti bypass logic) are available strictly under NDA
+
+
+8. License
+
+This repository describes the public specification of the AUTHENTICA standard
+The full implementation is not part of this open code.
