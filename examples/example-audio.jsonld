@@ -2,7 +2,7 @@
   "@context": "https://schema.authentica.org/manifest-v1.jsonld",
   "@type": "CreativeWork",
   
-  "uid_auth": "FR-2025-AUTH-000001",
+  "uid_auth": "FR-2025-AUTH-MUS-000001",
   "name": "Example Audio Track",
   "creator": "Anonymous",
 
@@ -21,6 +21,6 @@
 
   "hash": {
     "algorithm": "sha256",
-    "value": "EXAMPLE"
+    "value": "EXAMPLE-AUDIO-HASH"
   }
 }
