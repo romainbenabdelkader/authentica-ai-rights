@@ -13,14 +13,15 @@ Ce depot publie uniquement les composants ouverts du manifeste :
 
 AUTHENTICA n'est pas un systeme de surveillance, de sanction automatique, de DRM, de watermarking ou de decision juridique automatique.
 
-## Relation avec AURA
+## Architecture
 
-AURA et AUTHENTICA doivent rester separes.
+Les roles sont separes:
 
-- AURA est un standard ouvert, neutre et non capturable pour la preuve technique d'origine et d'integrite.
-- AUTHENTICA est un profil applicatif possible pour declarer des droits, des restrictions IA et des signaux de reserve.
+- AURA fournit une preuve technique neutre d'origine, d'integrite et de verification. AURA peut verifier un manifeste, un hash ou une signature, sans imposer de registre, d'identifiant ou de profil de droits.
+- UID_AUTH fournit l'identifiant souverain de l'oeuvre ou de l'actif. Il peut etre porte dans un manifeste AUTHENTICA via le champ `uid_auth`.
+- AUTHENTICA fournit le profil de droits et de reserve IA/TDM. C'est le role de ce depot: definir le contexte, le schema, les exemples et les regles minimales de validation du manifeste.
 
-AUTHENTICA peut utiliser des concepts compatibles avec AURA, mais AUTHENTICA ne controle pas AURA et AURA ne depend pas d'AUTHENTICA.
+AUTHENTICA peut utiliser UID_AUTH comme identifiant et des concepts compatibles avec AURA pour la preuve technique, mais AUTHENTICA ne controle pas AURA, AURA ne depend pas d'AUTHENTICA, et UID_AUTH reste un standard d'identification distinct.
 
 Aucune plateforme proprietaire, fournisseur, modele IA, hebergeur de depot, assistant logiciel ou service commercial n'est requis pour lire, creer, verifier ou auditer les manifestes publies dans ce depot.
 

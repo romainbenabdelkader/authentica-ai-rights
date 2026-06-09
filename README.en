@@ -13,14 +13,15 @@ This repository publishes only the open manifest components:
 
 AUTHENTICA is not a surveillance system, automated sanction system, DRM, watermarking system or automated legal decision system.
 
-## Relationship with AURA
+## Architecture
 
-AURA and AUTHENTICA must remain separate.
+The roles are separate:
 
-- AURA is an open, neutral and non-capturable standard for technical proof of origin and integrity.
-- AUTHENTICA is a possible application profile for declaring rights, AI restrictions and reservation signals.
+- AURA provides neutral technical proof of origin, integrity and verification. AURA can verify a manifest, hash or signature without imposing a registry, identifier or rights profile.
+- UID_AUTH provides the sovereign identifier for the work or asset. It may be carried in an AUTHENTICA manifest through the `uid_auth` field.
+- AUTHENTICA provides the AI/TDM rights and reservation profile. This repository defines the manifest context, schema, examples and minimal validation rules.
 
-AUTHENTICA may use concepts compatible with AURA, but AUTHENTICA does not control AURA and AURA does not depend on AUTHENTICA.
+AUTHENTICA may use UID_AUTH as an identifier and AURA-compatible concepts for technical proof, but AUTHENTICA does not control AURA, AURA does not depend on AUTHENTICA, and UID_AUTH remains a distinct identification standard.
 
 No proprietary platform, vendor, model provider, repository host, software assistant or commercial service is required to read, create, verify or audit the manifests published in this repository.
 
