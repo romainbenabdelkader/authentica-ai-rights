@@ -1,5 +1,5 @@
 {
-  "@context": "https://schema.authentica.org/manifest-v1.jsonld",
+  "@context": "https://raw.githubusercontent.com/romainbenabdelkader/authentica-ai-rights/main/manifest/manifest-v1.jsonld",
   "@type": "CreativeWork",
   
   "uid_auth": "FR-2025-AUTH-MUS-000001",
