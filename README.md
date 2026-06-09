@@ -1,257 +1,109 @@
-AUTHENTICA  AI Rights & Origin Manifest
+# AUTHENTICA AI Rights & Origin Manifest
 
-Standard ouvert de transparence IA, preuve d’origine et conformité européenne (AI Act)
+Statut : brouillon public.
 
+AUTHENTICA AI Rights & Origin Manifest est un profil JSON-LD ouvert pour declarer l'origine d'un contenu, la reserve de droits, le TDM opt-out et les restrictions d'entrainement IA associees a une oeuvre ou un actif numerique.
 
-AUTHENTICA définit un cadre souverain et interopérable permettant :
+Ce depot publie uniquement les composants ouverts du manifeste :
 
-•	la preuve d’origine d’une œuvre (création humaine)
+- contexte JSON-LD
+- schema JSON
+- exemples machine-readable
+- regles minimales de validation
 
-•	la transparence IA imposée par le AI Act
+AUTHENTICA n'est pas un systeme de surveillance, de sanction automatique, de DRM, de watermarking ou de decision juridique automatique.
 
-•	le TDM opt-out (directive européenne)
+## Relation avec AURA
 
-•	un identifiant universel UID_AUTH
+AURA et AUTHENTICA doivent rester separes.
 
-•	un manifeste machine readable, compatible DSP, IA et OGC
+- AURA est un standard ouvert, neutre et non capturable pour la preuve technique d'origine et d'integrite.
+- AUTHENTICA est un profil applicatif possible pour declarer des droits, des restrictions IA et des signaux de reserve.
 
-•	une architecture ouverte, sans dépendance à une plateforme.
+AUTHENTICA peut utiliser des concepts compatibles avec AURA, mais AUTHENTICA ne controle pas AURA et AURA ne depend pas d'AUTHENTICA.
 
-Ce dépôt contient les éléments publics du standard.
+Aucune plateforme proprietaire, fournisseur, modele IA, hebergeur de depot, assistant logiciel ou service commercial n'est requis pour lire, creer, verifier ou auditer les manifestes publies dans ce depot.
 
-Les composants sensibles (registre sécurisé, génération UID_AUTH, signature cryptographique, LockDNA, anti-contournement) sont accessibles uniquement sous NDA.
+## Ce que le manifeste peut declarer
 
+Un manifeste AUTHENTICA peut contenir :
 
-1. Objectif du standard
+- `uid_auth` : identifiant stable de l'oeuvre ou de l'actif
+- `name` : titre ou nom public
+- `creator` : createur, pseudonyme, institution ou valeur `Anonymous`
+- `origin` : declaration d'origine, par exemple `human`, `ai`, `hybrid` ou `unknown`
+- `issued_at` : date d'emission en ISO-8601
+- `issuer` : entite declarant ou emettant le manifeste
+- `rights.ai_training` : permission ou interdiction declaree pour l'entrainement IA
+- `rights.tdm_opt_out` : signal de reserve TDM
+- `hash` : empreinte d'integrite du fichier ou de l'actif reference
 
-Le AI Act impose :
+## Ce que le manifeste ne prouve pas
 
-1.	la traçabilité des contenus
+Le manifeste ne prouve pas a lui seul :
 
-2.	l’indication de l’origine humaine/IA
+- la titularite juridique
+- la validite du droit d'auteur
+- une infraction
+- une responsabilite
+- l'utilisation effective d'une oeuvre par un systeme IA
+- la qualite de createur au sens juridique
 
-3.	des signaux lisibles par les systèmes IA
+AUTHENTICA fournit un artefact technique verifiable. La loi, l'audit, le regulateur ou le juge decident des qualifications juridiques.
 
-4.	le respect du TDM opt-out
+## RGPD et minimisation
 
-AUTHENTICA fournit exactement cette couche manquante entre :
+Le profil est concu pour fonctionner sans donnee personnelle obligatoire.
 
-• les auteurs
+Les implementations devraient privilegier :
 
-• les sociétés de gestion collective (OGC)
+- `Anonymous`, un pseudonyme ou un identifiant institutionnel lorsque c'est suffisant
+- les hash cryptographiques plutot que le contenu integre
+- les declarations minimales utiles
+- l'absence de suivi comportemental ou de journalisation d'usage non necessaire
 
-• les plateformes (DSP)
+Si une implementation ajoute des donnees personnelles ou relie un manifeste a une personne identifiable, cette implementation reste responsable de sa base legale, de l'information des personnes, des durees de conservation et des droits RGPD.
 
-• les IA génératives
-
-• le cadre réglementaire européen.
-
-
-2. Architecture du protocole
-
-Le protocole AUTHENTICA repose sur trois briques :
-
-1) UID_AUTH (identifiant souverain) déjà opérationnel
-
-Format lisible, horodaté, stable, permettant :
-
-•	la référence d’une œuvre,
-
-•	la déclaration humaine/IA,
-
-•	la compatibilité juridique inter-pays
-
-•	l’interopérabilité avec les OGC
-
-
-Exemple :
-
-FR-2025-AUTH-MUS-000001
-
-L’UID_AUTH est émis par une autorité identitaire (OGC ou opérateur délégué dans un pilote)
-
-
-
-2) Manifeste IA (JSON-LD) déjà opérationnel
-
-Inclut :
-
-•	origine humaine
-
-•	TDM opt-out
-
-•	restrictions d’usage IA
-
-•	hash d’intégrité
-
-•	UID_AUTH
-
-•	timestamp
-
-•	issuer
-
-•	conformité RGPD (aucune donnée personnelle)
-
-Le manifeste est lisible par les IA, DSP, régulateurs et outils juridiques.
-
-
-3) Empreinte native LockDNA spécifiée, R&D en cours
-
-Le protocole AUTHENTICA prévoit une empreinte extraite du contenu réel (audio, image, vidéo, texte), permettant :
-
-•	robustesse aux compressions,découpage, transcodages
-
-•	invariance dans le temps
-
-•	indépendance du format
-
-•	détection autonome dans les usages illicites IA
-
-LockDNA est un module propriétaire en développement, soumis à R&D DSP/audio & vision.
-
-Il n’est pas inclus dans le présent dépôt.
-
-
-3. Propriétés principales
-
-•	Standard ouvert : interopérable, neutre, sans dépendance propriétaire
-
-•	Preuve d’origine souveraine : UID_AUTH + hash + manifeste IA
-
-•	Compatible AI Act : transparence, provenance, déclaration, TDM opt-out
-
-•	RGPD compliant : aucune donnée personnelle dans le manifeste
-
-•	Multimédia : spécifié pour audio, vidéo, image, texte
-
-•	Machine-readable : JSON-LD, basé sur schema.org et vocabulaires droits
-
-•	Non intrusif : ne modifie pas le fichier original.
-
-
-4. Intégration avec les sociétés de gestion collective (OGC)
-
-AUTHENTICA est conçu pour être utilisé par :
-
-• SACEM
-
-• ADAMI
-
-• SPEDIDAM
-
-• PRS
-
-• STIM
-
-• GEMA
-
-• SIAE
-
-• SABAM, etc….
-
-Le protocole ne remplace pas les OGC
-
-Il fournit la couche technique qui leur manque :
-
-•	preuve d’origine
-
-•	transparence IA
-
-•	UID unifié
-
-•	compatibilité réglementaire
-
-•	registres vérifiables
-
-•	traçabilité des usages IA
-
-L’OGC reste en charge de :
-
-•	la gestion des droits
-
-•	les répartitions
-
-•	les flux financiers
-
-•	les règles internes
-
-
-AUTHENTICA = infrastructure technique souveraine, pas un concurrent
-
-
-5. Exemples de manifeste (JSON-LD)
-6. 
-Œuvre audio
+## Exemple minimal
 
 ```json
 {
-  "@context→": "https://schema.authentica.org/ai-rights/v1",
+  "@context": "https://schema.authentica.org/manifest-v1.jsonld",
   "@type": "CreativeWork",
-
   "uid_auth": "FR-2025-AUTH-MUS-000001",
-  "name": "Example Audio Work",
+  "name": "Example Audio Track",
   "creator": "Anonymous",
   "origin": "human",
-
-  "rights": {
-    "ai_training": "prohibited",
-    "tdm_opt_out": true
-  },
-
-  "hash": {
-    "algorithm": "sha256",
-    "value": "EXAMPLE-AUDIO-HASH"
-  },
-
   "issued_at": "2025-11-11T00:40:07Z",
   "issuer": {
     "name": "AUTHENTICA",
     "type": "IdentityAuthority"
+  },
+  "rights": {
+    "ai_training": "prohibited",
+    "tdm_opt_out": true
+  },
+  "hash": {
+    "algorithm": "sha256",
+    "value": "EXAMPLE-AUDIO-HASH"
   }
 }
+```
 
+## Validation locale
 
-6. Gouvernance et interopérabilité
+```bash
+python3 scripts/validate_examples.py
+```
 
-AUTHENTICA définit :
+La validation verifie que les exemples JSON-LD sont du JSON valide, contiennent les champs requis et respectent le schema minimal du depot.
 
-•	un namespace par OGC / autorité
+## Composants non inclus
 
-•	un format stable de manifeste
+Ce depot ne contient pas de registre securise, de service de certification, de module de fingerprinting, de detection d'usage, de surveillance ou d'anti-contournement.
 
-•	un schéma d’émission UID_AUTH
+Des produits ou modules commerciaux peuvent exister separement, mais ils ne font pas partie du profil ouvert publie ici et ne sont pas requis pour lire ou implementer ce manifeste.
 
-•	les propriétés minimales exigées par le AI Act
+## Licence
 
-
-Interoperable avec :
-
-• son propres vocabulaires
-
-• schema.org CreativeWork
-
-• ODRL (Open Digital Rights Language)
-
-• JSON Schema
-
-
-7. Statut du projet (2025)
-
-•	UID_AUTH : opérationnel, ouvert
-
-•	Manifeste IA Act : opérationnel, stable
-
-•	MVP LockTrace Genesis : disponible en démonstration
-
-•	Pilote institutionnel : en cours de cadrage
-
-•	LockDNA (empreinte native) : spécification complète, implémentation en R&D
-
-Les composants internes (registre, signature, anti-contournement) sont fournis exclusivement sous NDA
-
-
-8. Licence
-
-Ce dépôt concerne uniquement la spécification du standard
-
-L’implémentation complète d’AUTHENTICA ne fait pas partie du code ouvert
+Les fichiers publics de ce depot sont publies sous licence MIT. Voir `LICENSE`.

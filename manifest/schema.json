@@ -1,12 +1,114 @@
-authentica-ai-rights/
-│
-├── README.md
-├── manifest/
-│   ├── manifest-v1.jsonld
-│   └── schema.json
-│
-└── examples/
-    ├── example-audio.jsonld
-    ├── example-image.jsonld
-    ├── example-text.jsonld
-    └── example-video.jsonld   
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.authentica.org/manifest-v1.schema.json",
+  "title": "AUTHENTICA AI Rights & Origin Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "@context",
+    "@type",
+    "uid_auth",
+    "name",
+    "creator",
+    "origin",
+    "issued_at",
+    "issuer",
+    "rights",
+    "hash"
+  ],
+  "properties": {
+    "@context": {
+      "type": [
+        "string",
+        "object",
+        "array"
+      ]
+    },
+    "@type": {
+      "const": "CreativeWork"
+    },
+    "uid_auth": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}-[0-9]{4}-AUTH(-[A-Z]{3})?-[0-9]{6}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "creator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "type": "string",
+      "enum": [
+        "human",
+        "ai",
+        "hybrid",
+        "unknown"
+      ]
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issuer": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "required": [
+        "ai_training",
+        "tdm_opt_out"
+      ],
+      "properties": {
+        "ai_training": {
+          "type": "string",
+          "enum": [
+            "prohibited",
+            "permitted",
+            "license_required",
+            "unknown"
+          ]
+        },
+        "tdm_opt_out": {
+          "type": "boolean"
+        }
+      }
+    },
+    "hash": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "enum": [
+            "sha256",
+            "sha3-256"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

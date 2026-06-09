@@ -1,8 +1,20 @@
 {
-  "@context": [
-    "https://www.w3.org/ns/activitystreams",
-    "https://schema.lockdna.tech/ai-rights/v1"
-  ],
-  "type": "CreativeWork",
-  ...
+  "@context": {
+    "schema": "https://schema.org/",
+    "authentica": "https://schema.authentica.org/terms#",
+    "CreativeWork": "schema:CreativeWork",
+    "uid_auth": "authentica:uidAuth",
+    "name": "schema:name",
+    "creator": "schema:creator",
+    "origin": "authentica:origin",
+    "issued_at": "schema:dateCreated",
+    "issuer": "authentica:issuer",
+    "rights": "authentica:rights",
+    "ai_training": "authentica:aiTraining",
+    "tdm_opt_out": "authentica:tdmOptOut",
+    "hash": "authentica:hash",
+    "algorithm": "authentica:hashAlgorithm",
+    "value": "authentica:hashValue",
+    "type": "schema:additionalType"
+  }
 }
