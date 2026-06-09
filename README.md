@@ -96,7 +96,7 @@ Si une implementation ajoute des donnees personnelles ou relie un manifeste a un
 python3 scripts/validate_examples.py
 ```
 
-La validation verifie que les exemples JSON-LD sont du JSON valide, contiennent les champs requis et respectent le schema minimal du depot.
+La validation verifie que les exemples JSON-LD sont du JSON valide, contiennent les champs requis et respectent le schema du depot. Lorsque la bibliotheque optionnelle `jsonschema` est installee (`pip install jsonschema`), les exemples sont valides directement contre `manifest/schema.json`, qui fait foi ; sinon un controle equivalent en bibliotheque standard est utilise.
 
 ## Composants non inclus
 

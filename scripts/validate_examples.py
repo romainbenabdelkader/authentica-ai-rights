@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
-"""Validate AUTHENTICA JSON-LD examples with the local minimal schema."""
+"""Validate the AUTHENTICA JSON-LD examples against the manifest JSON Schema.
+
+The JSON Schema (manifest/schema.json) is the source of truth. When the
+optional `jsonschema` library is available the examples are validated directly
+against it, so the schema and the examples cannot silently drift apart. If
+`jsonschema` is not installed the script falls back to an equivalent built-in
+check using only the Python standard library, so it still runs anywhere.
+
+Install the schema validator with:  pip install jsonschema
+"""
 
 from __future__ import annotations
 
@@ -31,7 +40,8 @@ def require(condition: bool, message: str, errors: list[str]) -> None:
         errors.append(message)
 
 
-def validate_manifest(path: Path) -> list[str]:
+def builtin_validate(path: Path) -> list[str]:
+    """Standard-library fallback mirroring the JSON Schema constraints."""
     data = load_json(path)
     errors: list[str] = []
 
@@ -83,12 +93,29 @@ def validate_manifest(path: Path) -> list[str]:
 
 
 def main() -> int:
-    load_json(SCHEMA)
+    schema = load_json(SCHEMA)
     load_json(CONTEXT)
+
+    try:
+        from jsonschema import Draft202012Validator
+
+        Draft202012Validator.check_schema(schema)
+        validator = Draft202012Validator(schema)
+        mode = "jsonschema (schema-driven)"
+    except ModuleNotFoundError:
+        validator = None
+        mode = "built-in fallback (install jsonschema for schema-driven checks)"
 
     failures = 0
     for path in sorted(EXAMPLES.glob("*.jsonld")):
-        errors = validate_manifest(path)
+        if validator is not None:
+            errors = [
+                f"{list(e.path)}: {e.message}"
+                for e in sorted(validator.iter_errors(load_json(path)), key=lambda e: list(e.path))
+            ]
+        else:
+            errors = builtin_validate(path)
+
         if errors:
             failures += 1
             print(f"INVALID {path.relative_to(ROOT)}")
@@ -97,6 +124,7 @@ def main() -> int:
         else:
             print(f"OK {path.relative_to(ROOT)}")
 
+    print(f"[validated with: {mode}]")
     return 1 if failures else 0
 
 
