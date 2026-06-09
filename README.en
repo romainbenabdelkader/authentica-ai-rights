@@ -96,7 +96,7 @@ If an implementation adds personal data or links a manifest to an identifiable n
 python3 scripts/validate_examples.py
 ```
 
-Validation checks that the JSON-LD examples are valid JSON, contain the required fields and follow the minimal repository schema.
+Validation checks that the JSON-LD examples are valid JSON, contain the required fields and follow the repository schema. When the optional `jsonschema` library is installed (`pip install jsonschema`), the examples are validated directly against `manifest/schema.json`, which is the source of truth; otherwise an equivalent standard-library check is used.
 
 ## Components Not Included
 
