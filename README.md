@@ -2,6 +2,8 @@
 
 Statut : brouillon public.
 
+[English documentation](README.en.md)
+
 AUTHENTICA AI Rights & Origin Manifest est un profil JSON-LD ouvert pour declarer l'origine d'un contenu, la reserve de droits, le TDM opt-out et les restrictions d'entrainement IA associees a une oeuvre ou un actif numerique.
 
 Ce depot publie uniquement les composants ouverts du manifeste :
@@ -17,11 +19,16 @@ AUTHENTICA n'est pas un systeme de surveillance, de sanction automatique, de DRM
 
 Les roles sont separes:
 
-- AURA fournit une preuve technique neutre d'origine, d'integrite et de verification. AURA peut verifier un manifeste, un hash ou une signature, sans imposer de registre, d'identifiant ou de profil de droits.
-- UID_AUTH fournit l'identifiant souverain de l'oeuvre ou de l'actif. Il peut etre porte dans un manifeste AUTHENTICA via le champ `uid_auth`.
+- AURA definit des declarations d'origine signees et des preuves d'integrite des fichiers. Ses schemas exigent `aura_uid`, mais aucun identifiant institutionnel ni UID_AUTH. La verification locale ne depend pas d'AUTHENTICA.
+- UID_AUTH definit un format d'identifiant declare pour l'oeuvre ou l'actif. Le schema de ce depot exige le champ `uid_auth` ; cette exigence ne s'etend pas au socle AURA.
 - AUTHENTICA fournit le profil de droits et de reserve IA/TDM. C'est le role de ce depot: definir le contexte, le schema, les exemples et les regles minimales de validation du manifeste.
 
 AUTHENTICA peut utiliser UID_AUTH comme identifiant et des concepts compatibles avec AURA pour la preuve technique, mais AUTHENTICA ne controle pas AURA, AURA ne depend pas d'AUTHENTICA, et UID_AUTH reste un standard d'identification distinct.
+
+Ce document JSON-LD n'est pas, a lui seul, un manifeste AURA signe. Les schemas
+UID_AUTH et AUTHENTICA utilisent des vocabulaires et contraintes differents.
+Voir les [limites de compatibilite et les versions publiees](ARCHITECTURE.md).
+Les exemples ne constituent pas un test d'interoperabilite entre ces formats.
 
 Aucune plateforme proprietaire, fournisseur, modele IA, hebergeur de depot, assistant logiciel ou service commercial n'est requis pour lire, creer, verifier ou auditer les manifestes publies dans ce depot.
 
@@ -67,6 +74,11 @@ Si une implementation ajoute des donnees personnelles ou relie un manifeste a un
 
 ## Exemple minimal
 
+Exemple de structure uniquement : `EXAMPLE-AUDIO-HASH` et les valeurs
+`EXAMPLE-...` des fichiers sous `examples/` sont des valeurs fictives, pas des
+empreintes cryptographiques. Aucun actif correspondant ni signature AURA n'est
+fourni. Le schema accepte ces chaines ; leur validation ne prouve aucune integrite.
+
 ```json
 {
   "@context": "https://raw.githubusercontent.com/romainbenabdelkader/authentica-ai-rights/main/manifest/manifest-v1.jsonld",
@@ -97,7 +109,11 @@ Si une implementation ajoute des donnees personnelles ou relie un manifeste a un
 python3 scripts/validate_examples.py
 ```
 
-La validation verifie que les exemples JSON-LD sont du JSON valide, contiennent les champs requis et respectent le schema du depot. Lorsque la bibliotheque optionnelle `jsonschema` est installee (`pip install jsonschema`), les exemples sont valides directement contre `manifest/schema.json`, qui fait foi ; sinon un controle equivalent en bibliotheque standard est utilise.
+La validation controle la structure declaree. Avec la bibliotheque optionnelle
+`jsonschema` (`pip install jsonschema`), le script utilise `manifest/schema.json`
+sans activer de controle supplementaire des formats de dates ou d'URI. Sinon,
+il utilise des controles minimaux en bibliotheque standard. Il ne recalcule pas
+les empreintes, ne verifie aucune signature et n'authentifie pas l'emetteur.
 
 ## Composants non inclus
 
