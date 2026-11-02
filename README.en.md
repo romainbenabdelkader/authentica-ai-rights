@@ -106,14 +106,22 @@ does not establish asset integrity.
 ## Local Validation
 
 ```bash
+python3 -m pip install 'jsonschema>=4,<5'
 python3 scripts/validate_examples.py
 ```
 
-Validation checks declared structure. With the optional `jsonschema` library
-(`pip install jsonschema`), the script uses `manifest/schema.json` without
-enabling additional date or URI format checks. Otherwise it uses minimal
-standard-library checks. It does not recompute asset hashes, verify signatures
+Validation checks declared structure against `manifest/schema.json` using the
+required `jsonschema` library, without enabling additional date or URI format
+checks. If the library cannot be imported, the script exits with code 2 without
+validating any examples. It returns 0 when all examples satisfy the schema, or
+1 when an example is invalid. It does not recompute asset hashes, verify signatures
 or authenticate the issuer.
+
+Regression tests (dependency installed):
+
+```bash
+python3 -m unittest discover -s tests -v
+```
 
 ## Components Not Included
 

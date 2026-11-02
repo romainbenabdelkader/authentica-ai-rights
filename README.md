@@ -106,14 +106,22 @@ fourni. Le schema accepte ces chaines ; leur validation ne prouve aucune integri
 ## Validation locale
 
 ```bash
+python3 -m pip install 'jsonschema>=4,<5'
 python3 scripts/validate_examples.py
 ```
 
-La validation controle la structure declaree. Avec la bibliotheque optionnelle
-`jsonschema` (`pip install jsonschema`), le script utilise `manifest/schema.json`
-sans activer de controle supplementaire des formats de dates ou d'URI. Sinon,
-il utilise des controles minimaux en bibliotheque standard. Il ne recalcule pas
+La validation controle la structure declaree avec `manifest/schema.json` et la
+bibliotheque requise `jsonschema`, sans activer de controle supplementaire des
+formats de dates ou d'URI. Si la bibliotheque ne peut pas etre importee, le
+script s'arrete avec le code 2 et ne valide aucun exemple. Il renvoie 0 si tous
+les exemples respectent le schema, ou 1 si un exemple est invalide. Il ne recalcule pas
 les empreintes, ne verifie aucune signature et n'authentifie pas l'emetteur.
+
+Tests de regression (dependance installee):
+
+```bash
+python3 -m unittest discover -s tests -v
+```
 
 ## Composants non inclus
 
